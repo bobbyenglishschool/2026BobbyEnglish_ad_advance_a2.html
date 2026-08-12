@@ -166,7 +166,7 @@
             justify-content: space-between;
         }
 
-        /* 📜 動態捲動卡片樣式（已移除頂部提示文字） */
+        /* 📜 動態捲動卡片樣式 */
         .description-scroll-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -239,7 +239,7 @@
             font-weight: 700;
         }
 
-        /* 🎯 避孤晶片：確保標語最後關鍵詞不單獨換行成單字 */
+        /* 🎯 避孤晶片：確保標語與單詞最後關鍵詞不單獨換行成單字 */
         .no-orphan {
             display: inline-block;
             white-space: nowrap;
@@ -256,7 +256,7 @@
             width: 100%; 
             border-collapse: separate; /* 改為 separate 以完整呈現整體外框 */
             border-spacing: 0;
-            font-size: 12.5px;
+            font-size: 12px;
             table-layout: fixed;
             word-wrap: break-word;
             border: 1px solid var(--border-color) !important; /* 強制整體外框顯影 */
@@ -268,10 +268,10 @@
         table.ad-table th, table.ad-table td { 
             border-right: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            padding: 9px 12px; 
+            padding: 8px 10px; 
             vertical-align: middle; 
             text-align: left; 
-            line-height: 1.5;
+            line-height: 1.45;
             word-break: break-word;
         }
 
@@ -288,7 +288,7 @@
             color: var(--uci-blue); 
             text-align: center; 
             font-weight: 700;
-            font-size: 13px;
+            font-size: 12.5px;
         }
 
         .center-text { text-align: center !important; font-weight: 700; color: var(--uci-blue); }
@@ -340,26 +340,6 @@
             display: flex;
             align-items: center;
             gap: 5px;
-        }
-
-        .note-textarea-10lines {
-            width: 100%;
-            height: 200px;
-            border: none;
-            background: transparent;
-            background-image: repeating-linear-gradient(
-                transparent,
-                transparent 27px,
-                var(--line-color) 27px,
-                var(--line-color) 28px
-            );
-            line-height: 28px;
-            font-size: 12px;
-            color: var(--text-main);
-            resize: none;
-            outline: none;
-            padding: 0 4px;
-            font-family: inherit;
         }
 
         .note-textarea-6lines {
@@ -567,7 +547,8 @@
                 <ul class="list-style" style="margin-bottom: 0;">
                     <li><strong>Unit 1: Amazing Animals</strong> 🐾 —— 探究神奇動物的生存本領與身體構造。<br><span class="eng-text">Discovering unique animal traits and body adaptations.</span></li>
                     <li><strong>Unit 2: Leo and Lily's Adventure</strong> 📖 —— 閱讀冒險故事，分析故事角色與情節發展。<br><span class="eng-text">Analyzing plot, setting, and character actions in adventure literature.</span></li>
-                    <li><strong>Unit 3: What is Our World Made of?</strong> 🔬 —— 理解物質三態（固態、液態、氣態）的科學觀念。<br><span class="eng-text">Understanding the science of solids, liquids, and gases.</span></li>
+                    <!-- 🎯 核心修復：把「科學觀念。」包裹在不斷行晶片中，徹底解決單字「念。」掉到最後一排的瑕疵！ -->
+                    <li><strong>Unit 3: What is Our World Made of?</strong> 🔬 —— 理解物質三態（固態、液態、氣態）的<span class="no-orphan">科學觀念。</span><br><span class="eng-text">Understanding the science of solids, liquids, and gases.</span></li>
                     <li><strong>Unit 4: Let's Make Ice Cream!</strong> 🍦 —— 學習製作過程的步驟說明與實驗變化。<br><span class="eng-text">Learning sequence, instructions, and practical science in making ice cream.</span></li>
                     <li><strong>Unit 5: Then and Now</strong> 📜 —— 對比過去與現在的生活演進，練習時間軸的表達。<br><span class="eng-text">Comparing past and present lifestyles using historical timelines.</span></li>
                     <li><strong>Unit 6: Tell Me a Story, Grandpa</strong> 👵 —— 傾聽傳統故事，學習故事敘述與世代經驗傳承。<br><span class="eng-text">Developing narrative listening skills through family and traditional stories.</span></li>
@@ -576,33 +557,38 @@
                 </ul>
             </div>
 
+            <!-- 🎯 核心修復：重構系統語法核心單元容器與表格寬度（26% / 22% / 52%），解決單字/數字掉行問題！ -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">✍️【系統語法核心單元】Azar Basic Grammar (5th Edition)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 2: Essential Grammar Structure & Chapters Map</p>
                 
                 <div class="table-container">
-                    <table class="ad-table" style="margin-top: 4px; margin-bottom: 2px; font-size: 12px;">
+                    <table class="ad-table" style="margin-top: 4px; margin-bottom: 2px; font-size: 11.5px;">
                         <thead>
                             <tr>
-                                <th style="width: 28%;">學習領域 | Target Area</th>
-                                <th style="width: 25%;">對應章節 | Chapters</th>
-                                <th style="width: 47%;">核心文法與能力培養 | Learning Outcomes</th>
+                                <th style="width: 26%;">學習領域 | Target Area</th>
+                                <th style="width: 22%;">對應章節 | Chapters</th>
+                                <th style="width: 52%;">核心文法與能力培養 | Learning Outcomes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="center-text">⏰ 生活日常與校園<br><span class="note">Daily & School Life</span></td>
-                                <td class="center-text"><strong>Chapter 3 (3-11)</strong><br><strong>Chapter 5 (5-1~5-10)</strong><br><strong>Chapter 2 (2-6)</strong></td>
-                                <td>• 熟練時間問答與數字表達 (What Time Is It?)<br>• 掌握名詞單複數、受格與所有格用法<br>• 校園情境與職業說明 (At School / Occupations)</td>
+                                <td class="center-text"><span class="no-orphan">⏰ 生活日常與校園</span><br><span class="note">Daily & School Life</span></td>
+                                <td class="center-text">
+                                    <strong class="no-orphan">Chapter 3 (3-11)</strong><br>
+                                    <strong class="no-orphan">Chapter 5 (5-1~5-10)</strong><br>
+                                    <strong class="no-orphan">Chapter 2 (2-6)</strong>
+                                </td>
+                                <td>• 熟練時間問答與數字表達 (What Time Is It?)<br>• 掌握名詞單複數、受格與所有格用法<br>• 校園情境與職業說明 (At School / <span class="no-orphan">Occupations)</span></td>
                             </tr>
                             <tr>
-                                <td class="center-text">🏡 空間方位與環境<br><span class="note">Places & Environment</span></td>
-                                <td class="center-text"><strong>Chapter 7 (7-1~7-8)</strong></td>
+                                <td class="center-text"><span class="no-orphan">🏡 空間方位與環境</span><br><span class="note">Places & Environment</span></td>
+                                <td class="center-text"><strong class="no-orphan">Chapter 7 (7-1~7-8)</strong></td>
                                 <td>• 熟練地點與時間介系詞 (Prepositions of Place/Time)<br>• 運用 <strong>There is / There are</strong> 句型描述空間與環境 (My Home / Places)</td>
                             </tr>
                             <tr>
-                                <td class="center-text">📜 時態對比與寫作<br><span class="note">Tense Mastery & Writing</span></td>
-                                <td class="center-text"><strong>Chapter 8 (8-1~8-9)</strong></td>
+                                <td class="center-text"><span class="no-orphan">📜 時態對比與寫作</span><br><span class="note">Tense Mastery & Writing</span></td>
+                                <td class="center-text"><strong class="no-orphan">Chapter 8 (8-1~8-9)</strong></td>
                                 <td>• 紮實掌握一般過去式 (Simple Past Tense) 規則與不規則動詞<br>• 運用 Yesterday, Last, Ago 進行現在與過去的時間對比 (Yesterday & Today)</td>
                             </tr>
                         </tbody>
