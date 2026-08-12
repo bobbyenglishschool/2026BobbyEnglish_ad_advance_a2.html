@@ -104,7 +104,7 @@
             display: block;
             line-height: 1.25;
             color: #ffffff;
-            margin: 0 0 6px 0; /* 調整與下方的距離 */
+            margin: 0 0 6px 0;
             padding: 0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
             font-size: 19.5px;
@@ -118,14 +118,14 @@
             margin-left: 4px;
         }
 
-        /* 🎯 標題第二行微調向下居中，完美伸展間距 */
+        /* 🎯 標題第二行微調向下居中 */
         .title-group h1 span.zh-sub-title {
             display: block;
             font-size: 15.5px;
             font-weight: 700;
             line-height: 1.35;
             color: var(--uci-gold);
-            margin: 6px 0 8px 0; /* 往下調整間距至居中 */
+            margin: 6px 0 8px 0;
             padding: 0;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
@@ -142,7 +142,6 @@
             letter-spacing: 0.8px;
         }
 
-        /* 🎯 校標尺寸微調 */
         .logo-img {
             width: 100%;
             max-width: 130px;
@@ -197,7 +196,7 @@
 
         /* 🎯 中英文字體分離與層級對比樣式 */
         p.paragraph-desc {
-            font-size: 13px; /* 中文字級清晰易讀 */
+            font-size: 13px;
             font-weight: 500;
             margin: 0 0 8px 0;
             text-align: justify;
@@ -210,7 +209,6 @@
             margin-bottom: 0;
         }
 
-        /* 英文字級精緻縮小，優雅襯托 */
         .light-en-text {
             font-size: 11px;
             font-weight: 400; 
@@ -245,7 +243,7 @@
             white-space: nowrap;
         }
 
-        /* 🛡️ 核心表格全邊框防線：外框與內部單元格完整顯示 */
+        /* 🛡️ 核心表格全邊框防線與欄位鎖定，徹底防止向右超出！ */
         .table-container {
             width: 100%;
             margin-top: 8px;
@@ -257,9 +255,9 @@
             border-collapse: separate; /* 改為 separate 以完整呈現整體外框 */
             border-spacing: 0;
             font-size: 12px;
-            table-layout: fixed;
+            table-layout: fixed; /* 嚴格固定欄位寬度，防溢出！ */
             word-wrap: break-word;
-            border: 1px solid var(--border-color) !important; /* 強制整體外框顯影 */
+            border: 1px solid var(--border-color) !important; 
             border-radius: 6px;
             overflow: hidden;
         }
@@ -318,7 +316,7 @@
             color: var(--text-sub); 
             display: block; 
             margin-top: 2px; 
-            font-size: 11px; /* 英文說明縮小襯托 */
+            font-size: 11px; 
             font-weight: 400; 
             line-height: 1.4;
             text-align: justify;
@@ -364,7 +362,7 @@
 
         /* 🖼️ 頁尾 Advancekids.png 圖檔左右延伸與放大調校 */
         .footer-image-box {
-            width: calc(100% + 80px); /* 向左右擴展延伸 */
+            width: calc(100% + 80px);
             margin-left: -40px; 
             margin-top: 8px;
             overflow: hidden;
@@ -374,9 +372,9 @@
         }
 
         .page-footer-img {
-            width: 100%; /* 寬度100%滿版延伸 */
+            width: 100%; 
             max-width: 100%; 
-            max-height: 145px; /* 高度適度放至 145px 展現大氣視覺 */
+            max-height: 145px; 
             object-fit: contain;
             display: block;
             margin: 0 auto;
@@ -401,7 +399,6 @@
             margin-bottom: 4px;
         }
 
-        /* 🎯 按鈕圖檔尺寸最佳化 */
         .cta-join-us-img {
             width: 100%;
             max-width: 145px;
@@ -432,7 +429,7 @@
                 padding: 15mm 18mm 0 18mm !important; 
                 margin: 0;
                 border-bottom: none;
-                overflow: hidden !important; /* 列印時鎖定邊界 */
+                overflow: hidden !important;
             }
             .page:last-child { page-break-after: avoid; }
             .description-scroll-box { max-height: none !important; overflow-y: visible !important; border: none !important; padding: 0 !important; }
@@ -541,13 +538,14 @@
             <h2 class="section-heading" style="margin-top: 0;">🗺️ 本學期的進度與內容規劃 | Semester Course Map (38 Lessons)</h2>
             <p class="paragraph-desc" style="margin-bottom: 4px;">全期共 38 堂課，清晰安排主題探究與語法單元，按部就班達成學習目標：<span class="light-en-text" style="display:block; margin-top: 2px;">Clear progression across 38 lessons matching thematic units with core grammar:</span></p>
 
+            <!-- 🎯 第一個卡片容器：完整獨立閉合 -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">🌍【主題探究單元】Oxford Discover 2 (Units 1-8)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 1: Interdisciplinary Topics & Reading Skills</p>
                 <ul class="list-style" style="margin-bottom: 0;">
                     <li><strong>Unit 1: Amazing Animals</strong> 🐾 —— 探究神奇動物的生存本領與身體構造。<br><span class="eng-text">Discovering unique animal traits and body adaptations.</span></li>
                     <li><strong>Unit 2: Leo and Lily's Adventure</strong> 📖 —— 閱讀冒險故事，分析故事角色與情節發展。<br><span class="eng-text">Analyzing plot, setting, and character actions in adventure literature.</span></li>
-                    <!-- 🎯 核心修復：把「科學觀念。」包裹在不斷行晶片中，徹底解決單字「念。」掉到最後一排的瑕疵！ -->
+                    <!-- 🎯 避孤字處理：「科學觀念。」不離散 -->
                     <li><strong>Unit 3: What is Our World Made of?</strong> 🔬 —— 理解物質三態（固態、液態、氣態）的<span class="no-orphan">科學觀念。</span><br><span class="eng-text">Understanding the science of solids, liquids, and gases.</span></li>
                     <li><strong>Unit 4: Let's Make Ice Cream!</strong> 🍦 —— 學習製作過程的步驟說明與實驗變化。<br><span class="eng-text">Learning sequence, instructions, and practical science in making ice cream.</span></li>
                     <li><strong>Unit 5: Then and Now</strong> 📜 —— 對比過去與現在的生活演進，練習時間軸的表達。<br><span class="eng-text">Comparing past and present lifestyles using historical timelines.</span></li>
@@ -555,9 +553,9 @@
                     <li><strong>Unit 7: Subtraction</strong> 🧮 —— 結合基礎數學減法概念的美語應用與問題解決。<br><span class="eng-text">Applying English in mathematical reasoning and subtraction word problems.</span></li>
                     <li><strong>Unit 8: Bandar, the Greedy Monkey</strong> 🐒 —— 閱讀經典寓言故事，討論行為後果與選擇。<br><span class="eng-text">Reading classic fables and discussing moral themes and choices.</span></li>
                 </ul>
-            </div>
+            </div> <!-- 🎯 完美補齊第一個卡片的閉合標籤，防止表格向下串味！ -->
 
-            <!-- 🎯 核心修復：重構系統語法核心單元容器與表格寬度（26% / 22% / 52%），解決單字/數字掉行問題！ -->
+            <!-- 🎯 第二個卡片容器：獨立且重構三欄比例 (28% / 24% / 48%)，確保內容 100% 待在格子內！ -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">✍️【系統語法核心單元】Azar Basic Grammar (5th Edition)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 2: Essential Grammar Structure & Chapters Map</p>
@@ -566,9 +564,9 @@
                     <table class="ad-table" style="margin-top: 4px; margin-bottom: 2px; font-size: 11.5px;">
                         <thead>
                             <tr>
-                                <th style="width: 26%;">學習領域 | Target Area</th>
-                                <th style="width: 22%;">對應章節 | Chapters</th>
-                                <th style="width: 52%;">核心文法與能力培養 | Learning Outcomes</th>
+                                <th style="width: 28%;">學習領域 | Target Area</th>
+                                <th style="width: 24%;">對應章節 | Chapters</th>
+                                <th style="width: 48%;">核心文法與能力培養 | Learning Outcomes</th>
                             </tr>
                         </thead>
                         <tbody>
