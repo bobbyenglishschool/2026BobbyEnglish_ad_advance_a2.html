@@ -104,7 +104,7 @@
             display: block;
             line-height: 1.25;
             color: #ffffff;
-            margin: 0 0 6px 0;
+            margin: 0 0 6px 0; /* 調整與下方的距離 */
             padding: 0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
             font-size: 19.5px;
@@ -142,6 +142,7 @@
             letter-spacing: 0.8px;
         }
 
+        /* 🎯 校標尺寸微調 */
         .logo-img {
             width: 100%;
             max-width: 130px;
@@ -196,7 +197,7 @@
 
         /* 🎯 中英文字體分離與層級對比樣式 */
         p.paragraph-desc {
-            font-size: 13px;
+            font-size: 13px; /* 中文字級清晰易讀 */
             font-weight: 500;
             margin: 0 0 8px 0;
             text-align: justify;
@@ -209,6 +210,7 @@
             margin-bottom: 0;
         }
 
+        /* 英文字級精緻縮小，優雅襯托 */
         .light-en-text {
             font-size: 11px;
             font-weight: 400; 
@@ -538,7 +540,7 @@
             <h2 class="section-heading" style="margin-top: 0;">🗺️ 本學期的進度與內容規劃 | Semester Course Map (38 Lessons)</h2>
             <p class="paragraph-desc" style="margin-bottom: 4px;">全期共 38 堂課，清晰安排主題探究與語法單元，按部就班達成學習目標：<span class="light-en-text" style="display:block; margin-top: 2px;">Clear progression across 38 lessons matching thematic units with core grammar:</span></p>
 
-            <!-- 🎯 第一個卡片容器：完整獨立閉合 -->
+            <!-- 🎯 第一個卡片容器：完整獨立閉合，絕不向下跑版！ -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">🌍【主題探究單元】Oxford Discover 2 (Units 1-8)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 1: Interdisciplinary Topics & Reading Skills</p>
@@ -553,9 +555,9 @@
                     <li><strong>Unit 7: Subtraction</strong> 🧮 —— 結合基礎數學減法概念的美語應用與問題解決。<br><span class="eng-text">Applying English in mathematical reasoning and subtraction word problems.</span></li>
                     <li><strong>Unit 8: Bandar, the Greedy Monkey</strong> 🐒 —— 閱讀經典寓言故事，討論行為後果與選擇。<br><span class="eng-text">Reading classic fables and discussing moral themes and choices.</span></li>
                 </ul>
-            </div> <!-- 🎯 完美補齊第一個卡片的閉合標籤，防止表格向下串味！ -->
+            </div> <!-- 🎯 完美補齊第一個卡片的閉合標籤！ -->
 
-            <!-- 🎯 第二個卡片容器：獨立且重構三欄比例 (28% / 24% / 48%)，確保內容 100% 待在格子內！ -->
+            <!-- 🎯 第二個卡片容器：獨立且重構三欄比例 (28% / 24% / 48%)，內容 100% 待在格子內不向右溢出！ -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">✍️【系統語法核心單元】Azar Basic Grammar (5th Edition)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 2: Essential Grammar Structure & Chapters Map</p>
