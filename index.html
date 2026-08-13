@@ -275,6 +275,12 @@
             word-break: break-word;
         }
 
+        /* 🎯 第二欄章節專屬對齊優化：縮小左右 Padding，讓章節內容向左微移、精準居中不壓右線！ */
+        table.ad-table td.col-chapter {
+            text-align: center !important;
+            padding: 8px 3px !important;
+        }
+
         /* 消除最右側與最底部的重複邊框 */
         table.ad-table th:last-child, table.ad-table td:last-child {
             border-right: none;
@@ -364,7 +370,7 @@
 
         /* 🖼️ 頁尾 Advancekids.png 圖檔左右延伸與放大調校 */
         .footer-image-box {
-            width: calc(100% + 80px);
+            width: calc(100% + 80px); /* 向左右擴展延伸 */
             margin-left: -40px; 
             margin-top: 8px;
             overflow: hidden;
@@ -374,9 +380,9 @@
         }
 
         .page-footer-img {
-            width: 100%; 
+            width: 100%; /* 寬度100%滿版延伸 */
             max-width: 100%; 
-            max-height: 145px; 
+            max-height: 145px; /* 高度適度放至 145px 展現大氣視覺 */
             object-fit: contain;
             display: block;
             margin: 0 auto;
@@ -401,6 +407,7 @@
             margin-bottom: 4px;
         }
 
+        /* 🎯 按鈕圖檔尺寸最佳化 */
         .cta-join-us-img {
             width: 100%;
             max-width: 145px;
@@ -431,7 +438,7 @@
                 padding: 15mm 18mm 0 18mm !important; 
                 margin: 0;
                 border-bottom: none;
-                overflow: hidden !important;
+                overflow: hidden !important; /* 列印時鎖定邊界 */
             }
             .page:last-child { page-break-after: avoid; }
             .description-scroll-box { max-height: none !important; overflow-y: visible !important; border: none !important; padding: 0 !important; }
@@ -540,7 +547,7 @@
             <h2 class="section-heading" style="margin-top: 0;">🗺️ 本學期的進度與內容規劃 | Semester Course Map (38 Lessons)</h2>
             <p class="paragraph-desc" style="margin-bottom: 4px;">全期共 38 堂課，清晰安排主題探究與語法單元，按部就班達成學習目標：<span class="light-en-text" style="display:block; margin-top: 2px;">Clear progression across 38 lessons matching thematic units with core grammar:</span></p>
 
-            <!-- 🎯 第一個卡片容器：完整獨立閉合，絕不向下跑版！ -->
+            <!-- 🎯 第一個卡片容器：獨立且完整閉合 -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">🌍【主題探究單元】Oxford Discover 2 (Units 1-8)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 1: Interdisciplinary Topics & Reading Skills</p>
@@ -555,9 +562,9 @@
                     <li><strong>Unit 7: Subtraction</strong> 🧮 —— 結合基礎數學減法概念的美語應用與問題解決。<br><span class="eng-text">Applying English in mathematical reasoning and subtraction word problems.</span></li>
                     <li><strong>Unit 8: Bandar, the Greedy Monkey</strong> 🐒 —— 閱讀經典寓言故事，討論行為後果與選擇。<br><span class="eng-text">Reading classic fables and discussing moral themes and choices.</span></li>
                 </ul>
-            </div> <!-- 🎯 完美補齊第一個卡片的閉合標籤！ -->
+            </div>
 
-            <!-- 🎯 第二個卡片容器：獨立且重構三欄比例 (28% / 24% / 48%)，內容 100% 待在格子內不向右溢出！ -->
+            <!-- 🎯 第二個卡片容器：對應章節欄位 (.col-chapter) 精準向左微移居中，100% 絕不壓右線！ -->
             <div class="info-card" style="padding: 10px 14px;">
                 <h3 style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin: 0 0 4px 0;">✍️【系統語法核心單元】Azar Basic Grammar (5th Edition)</h3>
                 <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 6px; color: var(--text-sub);">Part 2: Essential Grammar Structure & Chapters Map</p>
@@ -574,7 +581,7 @@
                         <tbody>
                             <tr>
                                 <td class="center-text"><span class="no-orphan">⏰ 生活日常與校園</span><br><span class="note">Daily & School Life</span></td>
-                                <td class="center-text">
+                                <td class="col-chapter">
                                     <strong class="no-orphan">Chapter 3 (3-11)</strong><br>
                                     <strong class="no-orphan">Chapter 5 (5-1~5-10)</strong><br>
                                     <strong class="no-orphan">Chapter 2 (2-6)</strong>
@@ -583,12 +590,12 @@
                             </tr>
                             <tr>
                                 <td class="center-text"><span class="no-orphan">🏡 空間方位與環境</span><br><span class="note">Places & Environment</span></td>
-                                <td class="center-text"><strong class="no-orphan">Chapter 7 (7-1~7-8)</strong></td>
+                                <td class="col-chapter"><strong class="no-orphan">Chapter 7 (7-1~7-8)</strong></td>
                                 <td>• 熟練地點與時間介系詞 (Prepositions of Place/Time)<br>• 運用 <strong>There is / There are</strong> 句型描述空間與環境 (My Home / Places)</td>
                             </tr>
                             <tr>
                                 <td class="center-text"><span class="no-orphan">📜 時態對比與寫作</span><br><span class="note">Tense Mastery & Writing</span></td>
-                                <td class="center-text"><strong class="no-orphan">Chapter 8 (8-1~8-9)</strong></td>
+                                <td class="col-chapter"><strong class="no-orphan">Chapter 8 (8-1~8-9)</strong></td>
                                 <td>• 紮實掌握一般過去式 (Simple Past Tense) 規則與不規則動詞<br>• 運用 Yesterday, Last, Ago 進行現在與過去的時間對比 (Yesterday & Today)</td>
                             </tr>
                         </tbody>
