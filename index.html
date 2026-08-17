@@ -653,10 +653,11 @@
                         <tr>
                             <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
-                                <strong style="color: var(--soft-red); font-size: 14.5px;">NT$35,366元 (全期原價)</strong><br>
-                                <span class="note">備註：全期基本學費 $29,260元 ($770×38堂) + 專屬教材費 $3,826元 + 當期學雜費 $2,280元 ($60×38堂)</span>
-                                <!-- 🎯 Aegis 核心修正：四捨五入動態計算連動：9折 $31,829 / 85折 $30,061 / ✨ 8折 $28,293 -->
-                                <span class="note">💡 全項目動態折扣特惠：9折價 $31,829元 / 85折價 $30,061元 / ✨ 8折價 $28,293元</span>
+                                <!-- 🎯 核心升級：學費金額更新為 $35,060 元，教材費更新為 $3,520 元 ($2,770 + $750) -->
+                                <strong style="color: var(--soft-red); font-size: 14.5px;">NT$35,060元 (全期原價)</strong><br>
+                                <span class="note">備註：全期基本學費 $29,260元 ($770×38堂) + 專屬教材費 $3,520元 ($2,770+$750) + 當期學雜費 $2,280元 ($60×38堂)</span>
+                                <!-- 🎯 Aegis 核心修正：四捨五入動態計算連動：9折 $31,554 / 85折 $29,801 / ✨ 8折 $28,048 -->
+                                <span class="note">💡 全項目動態折扣特惠：9折價 $31,554元 / 85折價 $29,801元 / ✨ 8折價 $28,048元</span>
                             </td>
                         </tr>
                     </tbody>
@@ -686,7 +687,7 @@
 
 </div>
 
-<!-- 📡 雙視窗雙開機制，防範彈窗阻斷 -->
+<!-- 📡 雙視窗雙開機制，具備 Safari 防阻斷備援機制 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
@@ -702,7 +703,8 @@ function openDualLinks(event) {
     setTimeout(function() {
         var w2 = window.open(contractLink, "_blank");
         if (!w2 || w2.closed || typeof w2.closed == 'undefined') {
-            console.warn("Contract popup blocked by mobile safety shield.");
+            console.warn("Contract popup blocked. Guidance provided.");
+            alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance A2 報名表！若未自動開啟定型化契約書，請點擊報名頁面內的「契約審閱連結」即可查閱喔！");
         }
     }, 150);
 }
