@@ -19,7 +19,7 @@
             --uci-gold: #fecc07; 
             --soft-red: #e74c3c;
             --card-bg: #f8fafc;
-            --border-color: #cbd5e1;
+            --border-color: #1b3d6d; /* 🎯 強制全面為巴比深藍色外框 */
             --line-color: #cbd5e1;
             --text-main: #1e293b;
             --text-sub: #475569;
@@ -169,7 +169,7 @@
         /* 📜 動態捲動卡片樣式 */
         .description-scroll-box {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid #cbd5e1;
             border-left: 4px solid var(--uci-blue);
             padding: 16px 20px;
             border-radius: 8px;
@@ -245,7 +245,7 @@
             white-space: nowrap;
         }
 
-        /* 🛡️ 核心表格全邊框防線與欄位鎖定，徹底防止向右超出！ */
+        /* 🛡️ 核心表格全邊框防線與欄位鎖定，徹底防止向右超出 (100% 巴比深藍 #1b3d6d !important) */
         .table-container {
             width: 100%;
             margin-top: 8px;
@@ -254,20 +254,20 @@
 
         table.ad-table { 
             width: 100%; 
-            border-collapse: separate; /* 改為 separate 以完整呈現整體外框 */
-            border-spacing: 0;
+            border-collapse: collapse !important; /* 全面統一為實體 collapse 演算法 */
+            margin-bottom: 0;
             font-size: 12px;
             table-layout: fixed; /* 嚴格固定欄位寬度，防溢出！ */
             word-wrap: break-word;
-            border: 1px solid var(--border-color) !important; 
-            border-radius: 6px;
+            border: 1px solid #1b3d6d !important;
+            border-radius: 0px;
             overflow: hidden;
+            background-color: #ffffff;
         }
 
         /* 明確設定內部格線與邊界 */
         table.ad-table th, table.ad-table td { 
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border: 1px solid #1b3d6d !important;
             padding: 8px 10px; 
             vertical-align: middle; 
             text-align: left; 
@@ -281,16 +281,8 @@
             padding: 8px 3px !important;
         }
 
-        /* 消除最右側與最底部的重複邊框 */
-        table.ad-table th:last-child, table.ad-table td:last-child {
-            border-right: none;
-        }
-        table.ad-table tr:last-child td {
-            border-bottom: none;
-        }
-
         table.ad-table th { 
-            background-color: #f1f5f9; 
+            background-color: #f0f4f8; 
             color: var(--uci-blue); 
             text-align: center; 
             font-weight: 700;
@@ -305,7 +297,7 @@
 
         .info-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid #cbd5e1;
             padding: 12px 16px;
             border-radius: 6px;
             margin-top: 6px;
@@ -426,6 +418,7 @@
 
         /* 🖨️ 列印專用防護罩：只有在「真正列印紙張」時才精準鎖定 A4 尺寸！ */
         @media print {
+            @page { size: A4 portrait; margin: 10mm 15mm; }
             body { background-color: #fff; padding: 0; margin: 0; }
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
             .page {
@@ -443,12 +436,12 @@
             .page:last-child { page-break-after: avoid; }
             .description-scroll-box { max-height: none !important; overflow-y: visible !important; border: none !important; padding: 0 !important; }
             .header-flex-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            table.ad-table th, table.ad-table td { 
-                border: 1px solid var(--border-color) !important; 
+            table.ad-table, table.ad-table th, table.ad-table td { 
+                border: 1px solid #1b3d6d !important; 
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact; 
             }
-            table.ad-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            table.ad-table th { background-color: #f0f4f8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .footer-image-box { width: calc(100% + 36mm) !important; margin-left: -18mm !important; }
             .last-page-footer-box { width: calc(100% + 36mm) !important; margin-left: -18mm !important; }
             .page-footer-img { max-height: 130px !important; }
@@ -485,7 +478,7 @@
             <div class="header-flex-box">
                 <div class="title-group">
                     <h1>
-                        <span class="en-main-title">Bobby English: Advance A2 <span class="zh-tag">進階美語與邏輯寫作班</span></span>
+                        <span class="en-main-title">Bobby English: Advance A2 <span class="zh-title-tag">進階美語與邏輯寫作班</span></span>
                         <span class="zh-sub-title">✨ A2 知識探險與邏輯寫作班 (Knowledge Explorer & Creative Writer) ✨</span>
                     </h1>
                     <h2>EXPAND YOUR MIND, MASTER YOUR EXPRESSION 🚀</h2>
@@ -501,9 +494,9 @@
                     【從探索世界到知識運用，建立邏輯寫作與完整表達能力】
                 </p>
                 <p class="paragraph-desc">
-                    延續 A1 班的探索基礎，Advance A2 班將帶領孩子邁入「知識活用與段落寫作」的新階段。本學期教學重點在於幫助<b>孩子們</b>將零散的單字與句型，轉化為有條理的書面表達與口語敘述。透過 Oxford Discover 2 跨學科主題，擴充科學、數學與歷史領域的閱讀深度；同時結合 Azar Basic Grammar 系統化語法架構，讓孩子明確理解時態對比與空間句型，培養長篇閱讀的專注力，並能自信寫出完整的短文段落。
+                    延續 A1 班的探索基礎，Advance A2 班將帶領孩子邁入「知識活用與段落寫作」的新階段。本學期教學重點在於幫助孩子們將零散的單字與句型，轉化為有條理的書面表達與口語敘述。透過 Oxford Discover 2 跨學科主題，擴充科學、數學與歷史領域的閱讀深度；同時結合 Azar Basic Grammar 系統化語法架構，讓孩子明確理解時態對比與空間句型，培養長篇閱讀的專注力，並能自信寫出完整的短文段落。
                 </p>
-                <p class="paragraph-desc" style="margin-top: 8px; border-top: 1px dashed var(--border-color); padding-top: 8px;">
+                <p class="paragraph-desc" style="margin-top: 8px; border-top: 1px dashed #cbd5e1; padding-top: 8px;">
                     <strong style="font-weight: 800; color: var(--uci-blue);">【Expand Your Mind, Master Your Expression】</strong>
                     <span class="light-en-text">Building upon foundational skills, A2 students move from basic exploration to active knowledge application and structured writing. By combining interdisciplinary themes with systematic grammar practice, students develop reading stamina and learn to articulate their ideas in clear, cohesive paragraphs.</span>
                 </p>
@@ -554,7 +547,6 @@
                 <ul class="list-style" style="margin-bottom: 0;">
                     <li><strong>Unit 1: Amazing Animals</strong> 🐾 —— 探究神奇動物的生存本領與身體構造。<br><span class="eng-text">Discovering unique animal traits and body adaptations.</span></li>
                     <li><strong>Unit 2: Leo and Lily's Adventure</strong> 📖 —— 閱讀冒險故事，分析故事角色與情節發展。<br><span class="eng-text">Analyzing plot, setting, and character actions in adventure literature.</span></li>
-                    <!-- 🎯 避孤字處理：「科學觀念。」不離散 -->
                     <li><strong>Unit 3: What is Our World Made of?</strong> 🔬 —— 理解物質三態（固態、液態、氣態）的<span class="no-orphan">科學觀念。</span><br><span class="eng-text">Understanding the science of solids, liquids, and gases.</span></li>
                     <li><strong>Unit 4: Let's Make Ice Cream!</strong> 🍦 —— 學習製作過程的步驟說明與實驗變化。<br><span class="eng-text">Learning sequence, instructions, and practical science in making ice cream.</span></li>
                     <li><strong>Unit 5: Then and Now</strong> 📜 —— 對比過去與現在的生活演進，練習時間軸的表達。<br><span class="eng-text">Comparing past and present lifestyles using historical timelines.</span></li>
@@ -633,7 +625,17 @@
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">⏰ 上課時間 | Class Time</td>
-                            <td class="left-align">每週二、四下午 4:30 p.m. - 6:30 p.m. (每次 2 小時)<br><span class="note">Every Tuesday and Thursday 4:30 - 6:30 p.m. (2 hours per lesson)</span></td>
+                            <!-- 🎯 升級重點：幾何 100% 精準居中，格式與報名表/契約書完全一致 -->
+                            <td style="text-align: center; vertical-align: middle;">
+                                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 2px 0;">
+                                    <div style="font-weight:800; color:var(--uci-blue); font-size:13px; line-height:1.2;">
+                                        <span class="no-orphan">每週二、四</span>
+                                    </div>
+                                    <div style="font-weight:700; color:var(--uci-blue); font-size:11.5px; line-height:1.2; margin-top:3px;">
+                                        <span class="no-orphan">4:30 PM - 6:30 PM (2小時/堂)</span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">🔢 總堂數 | Total Lessons</td>
@@ -653,9 +655,9 @@
                         <tr>
                             <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
-                                <strong style="color: var(--soft-red); font-size: 14.5px;">NT$34,506元 (全期原價)</strong><br>
-                                <span class="note">備註：全期基本學費 $29,260元 ($770×38堂) + 專屬教材費 $2,966元 + 學雜費 $2,280元 ($60×38堂)</span>
-                                <span class="note">💡 續班與早鳥優惠折扣：9折價 $31,055元 / 85折價 $29,330元 / 8折價 $27,604元</span>
+                                <strong style="color: var(--soft-red); font-size: 14.5px;">NT$35,366元 (全期原價)</strong><br>
+                                <span class="note">備註：全期基本學費 $29,260元 ($770×38堂) + 專屬教材費 $3,826元 + 當期學雜費 $2,280元 ($60×38堂)</span>
+                                <span class="note">💡 全項目動態折扣特惠：9折價 $31,829元 / 85折價 $30,061元 / ✨ 8折價 $28,293元</span>
                             </td>
                         </tr>
                     </tbody>
@@ -685,24 +687,23 @@
 
 </div>
 
+<!-- 📡 雙視窗雙開機制，防範彈窗阻斷 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷並移除結尾多餘斜線
-    const mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_a2.html";
-    const contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceA2.html";
+    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷並加入 150ms 安全延遲
+    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_a2.html";
+    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceA2.html";
     
-    const w1 = window.open(mainLink, "_blank");
+    var w1 = window.open(mainLink, "_blank");
     
-    try {
-        const w2 = window.open(contractLink, "_blank");
-        if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
-            console.warn("第二個視窗被瀏覽器彈跳攔截，建議提示使用者允許彈跳視窗。");
+    setTimeout(function() {
+        var w2 = window.open(contractLink, "_blank");
+        if (!w2 || w2.closed || typeof w2.closed == 'undefined') {
+            console.warn("Contract popup blocked by mobile safety shield.");
         }
-    } catch (e) {
-        console.error("無法自動開啟第二個視窗:", e);
-    }
+    }, 150);
 }
 </script>
 </body>
