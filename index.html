@@ -54,11 +54,11 @@
             position: relative;
             background: #fff;
             padding: 30px 35px 20px 35px;
-            overflow: visible; /* 螢幕瀏覽時允許自然延伸 */
+            overflow: visible;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 980px; /* 改為彈性最小高度 */
+            min-height: 980px;
             border-bottom: 2px dashed #e2e8f0;
         }
 
@@ -118,7 +118,6 @@
             margin-left: 4px;
         }
 
-        /* 🎯 標題第二行微調向下居中 */
         .title-group h1 span.zh-sub-title {
             display: block;
             font-size: 15.5px;
@@ -142,7 +141,6 @@
             letter-spacing: 0.8px;
         }
 
-        /* 🎯 校標尺寸微調 */
         .logo-img {
             width: 100%;
             max-width: 130px;
@@ -166,7 +164,6 @@
             justify-content: space-between;
         }
 
-        /* 📜 動態捲動卡片樣式 */
         .description-scroll-box {
             background-color: var(--card-bg);
             border: 1px solid #1b3d6d !important;
@@ -180,22 +177,10 @@
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .description-scroll-box::-webkit-scrollbar {
-            width: 5px;
-        }
-        .description-scroll-box::-webkit-scrollbar-track {
-            background: #e2e8f0;
-            border-radius: 4px;
-        }
-        .description-scroll-box::-webkit-scrollbar-thumb {
-            background: var(--uci-blue);
-            border-radius: 4px;
-        }
-        .description-scroll-box::-webkit-scrollbar-thumb:hover {
-            background: #0077b6;
-        }
+        .description-scroll-box::-webkit-scrollbar { width: 5px; }
+        .description-scroll-box::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 4px; }
+        .description-scroll-box::-webkit-scrollbar-thumb { background: var(--uci-blue); border-radius: 4px; }
 
-        /* 🎯 中英文字體分離與層級對比樣式 */
         p.paragraph-desc {
             font-size: 13px;
             font-weight: 500;
@@ -206,11 +191,8 @@
             word-break: break-word;
         }
 
-        p.paragraph-desc:last-child {
-            margin-bottom: 0;
-        }
+        p.paragraph-desc:last-child { margin-bottom: 0; }
 
-        /* 英文字級精緻縮小，優雅襯托 */
         .light-en-text {
             font-size: 11px;
             font-weight: 400; 
@@ -239,7 +221,6 @@
             font-weight: 700;
         }
 
-        /* 🎯 避孤晶片：確保標語與單詞最後關鍵詞不單獨換行成單字 */
         .no-orphan {
             display: inline-block;
             white-space: nowrap;
@@ -265,7 +246,6 @@
             background-color: #ffffff;
         }
 
-        /* 明確設定內部格線與邊界 */
         table.ad-table th, table.ad-table td { 
             border: 1px solid #1b3d6d !important;
             padding: 8px 10px; 
@@ -275,7 +255,6 @@
             word-break: break-word;
         }
 
-        /* 🎯 第二欄章節專屬對齊優化：縮小左右 Padding，讓章節內容向左微移、精準居中不壓右線！ */
         table.ad-table td.col-chapter {
             text-align: center !important;
             padding: 8px 3px !important;
@@ -360,7 +339,6 @@
             font-family: inherit;
         }
 
-        /* 🖼️ 頁尾 Advancekids.png 圖檔左右延伸與放大調校 */
         .footer-image-box {
             width: calc(100% + 80px);
             margin-left: -40px; 
@@ -399,7 +377,6 @@
             margin-bottom: 4px;
         }
 
-        /* 🎯 按鈕圖檔尺寸最佳化 */
         .cta-join-us-img {
             width: 100%;
             max-width: 145px;
@@ -416,7 +393,6 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
 
-        /* 🖨️ 列印專用防護罩：只有在「真正列印紙張」時才精準鎖定 A4 尺寸！ */
         @media print {
             @page { size: A4 portrait; margin: 10mm 15mm; }
             body { background-color: #fff; padding: 0; margin: 0; }
@@ -446,9 +422,7 @@
             .last-page-footer-box { width: calc(100% + 36mm) !important; margin-left: -18mm !important; }
             .page-footer-img { max-height: 130px !important; }
             .join-us-btn-container { display: none !important; }
-            table.ad-table, .info-card, .footer-image-box, .last-page-footer-box {
-                page-break-inside: avoid;
-            }
+            table.ad-table, .info-card, .footer-image-box, .last-page-footer-box { page-break-inside: avoid; }
         }
 
         @media (max-width: 768px) {
@@ -488,7 +462,6 @@
 
             <h2 class="section-heading">💡 教學重點與本學期課程目標 | Core Focus & Semester Objectives</h2>
             
-            <!-- 📜 動態捲動卡片區塊 -->
             <div class="description-scroll-box">
                 <p class="paragraph-desc" style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin-bottom: 6px;">
                     【從探索世界到知識運用，建立邏輯寫作與完整表達能力】
@@ -643,16 +616,19 @@
                             <td class="left-align">國小五至六年級（每週二、四固定上課，具備美語學習經驗 4 年以上者）<br><span class="note">Elementary School Grades 5-6 (Minimum 4 years of English learning experience)</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;">🛡️ 新生入學條件 | Admission Requirements</td>
+                            <td style="font-weight: bold;">🛡️ 入學條件 | Admission Requirements</td>
                             <td class="left-align" style="color: var(--text-main); font-size: 12.5px; line-height: 1.5;">
-                                1. 小朋友美語學習經驗需滿 4 年以上<br>
+                                1. 學員美語學習經驗需滿 4 年以上<br>
                                 2. 須通過補習班入學口試與筆試測驗
                             </td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
-                                <span class="note" style="font-size: 12px; color: var(--text-main); line-height: 1.5;">新/舊生本學期皆需購買新教材：學費 $29,260元 ($770×38堂) + 教材費 $3,520元 ($2,770+$750) + 當期學雜費 $2,280元 ($60×38堂)=<strong style="color: var(--soft-red); font-size: 13.5px;">NT$35,060元</strong></span>
+                                <!-- 🎯 Aegis 核心協定：去身分標籤，精準公式咬合：Math.round((29260 + 3520 + 2280) * 1) = NT$35,060 -->
+                                <span class="note" style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
+                                    本學期費用包含：學費 $29,260元 ($770×38堂) + 教材費 $3,520元 ($2,770+$750) + 當期學雜費 $2,280元 ($60×38堂) = <strong style="color: var(--soft-red); font-size: 13.5px;">NT$35,060元</strong>
+                                </span>
                             </td>
                         </tr>
                     </tbody>
@@ -682,7 +658,7 @@
 
 </div>
 
-<!-- 📡 雙視窗雙開機制，具備 Safari 防阻斷備援機制 -->
+<!-- 📡 雙視窗雙開機制，具備 Safari/Chrome 防阻斷機制 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
@@ -690,15 +666,15 @@ function openDualLinks(event) {
     var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_a2.html";
     var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceA2.html";
     
+    // 🎯 確保由用戶點擊直接觸發第一個視窗，避免被非同步阻斷
     var w1 = window.open(mainLink, "_blank", "noopener");
     
-    setTimeout(function() {
-        var w2 = window.open(contractLink, "_blank", "noopener");
-        if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
-            console.warn("Contract popup blocked. Guidance provided.");
-            alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance A2 報名表！若未自動開啟定型化契約書，請點擊報名頁面內的「契約審閱連結」即可查閱喔！");
-        }
-    }, 150);
+    // 第二個視窗立即宣告或使用友善備援提示
+    var w2 = window.open(contractLink, "_blank", "noopener");
+    if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
+        console.warn("Contract popup blocked by browser settings.");
+        alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance A2 報名表！若未自動開啟定型化契約書，請點擊報名頁面內的「契約審閱連結」即可查閱喔！");
+    }
 }
 </script>
 </body>
