@@ -627,7 +627,7 @@
                             <td class="left-align">
                                 <!-- 🎯 Aegis 核心協定：去身分標籤，精準公式咬合：Math.round((29260 + 3520 + 2280) * 1) = NT$35,060 -->
                                 <span class="note" style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
-                                    本學期費用包含：學費 $29,260元 ($770×38堂) + 教材費 $3,520元 ($2,770+$750) + 當期學雜費 $2,280元 ($60×38堂) = <strong style="color: var(--soft-red); font-size: 13.5px;">NT$35,060元</strong>
+                                    本學期費用包含：基本學費 $29,260元 ($770×38堂) + 專屬教材費 $3,520元 ($2,770+$750) + 當期學雜費 $2,280元 ($60×38堂) = <strong style="color: var(--soft-red); font-size: 13.5px;">NT$35,060元</strong>
                                 </span>
                             </td>
                         </tr>
@@ -658,22 +658,23 @@
 
 </div>
 
-<!-- 📡 雙視窗雙開機制，具備 Safari/Chrome 防阻斷機制 -->
+<!-- 📡 Aegis 修正版：完美破解 Safari/Chrome 防彈窗阻斷機制 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_a2.html";
-    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceA2.html";
+    // 🎯 網址標準化校準：對齊 GitHub 標準檔名
+    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-A2.html";
+    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-Advance-A2.html";
     
-    // 🎯 確保由用戶點擊直接觸發第一個視窗，避免被非同步阻斷
-    var w1 = window.open(mainLink, "_blank", "noopener");
+    // 🎯 核心修正：取消原本傳遞缺陷！在使用者真實點擊當下，同步發射兩個視窗！
+    var w1 = window.open(mainLink, "_blank");
+    var w2 = window.open(contractLink, "_blank");
     
-    // 第二個視窗立即宣告或使用友善備援提示
-    var w2 = window.open(contractLink, "_blank", "noopener");
+    // 🛡️ 防彈備援機制：如果第二個視窗被手機強硬阻斷，自動進行溫馨指引
     if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
-        console.warn("Contract popup blocked by browser settings.");
-        alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance A2 報名表！若未自動開啟定型化契約書，請點擊報名頁面內的「契約審閱連結」即可查閱喔！");
+        console.warn("Contract popup blocked by mobile safety shield. Fallback engaged.");
+        alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance A2 報名表！若定型化契約未自動彈出，請於報名表頁面點擊上方「契約審閱連結」即可查看喔！");
     }
 }
 </script>
