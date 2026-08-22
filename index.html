@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+# Ensure the file 'adv_a2.html' is present and write out the exact optimized version
+html_code = """<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -376,7 +377,7 @@
 
         .cta-join-us-img {
             width: 100%;
-            max-width: 145px;
+            max-width: 160px;
             height: auto;
             cursor: pointer;
             transition: transform 0.25s ease, filter 0.25s ease;
@@ -645,8 +646,10 @@
 
         <div class="last-page-footer-box">
             <div class="join-us-btn-container">
-                <!-- 🎯 圖片名稱與精準 URL 對齊修正區 -->
-                <img src="Advancejoinnow.png" alt="立即開啟巴比美語進階卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
+                <!-- 🎯 圖片名稱變更為 Advance-registrationform.png 且單一跳轉至線上報名表 -->
+                <a href="https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_a2.html" target="_blank" style="text-decoration: none; display: inline-block;">
+                    <img src="Advance-registrationform.png" alt="立即線上報名 Advance A2" class="cta-join-us-img">
+                </a>
             </div>
             <div class="footer-image-box" style="margin-top: 0; width: 100%; margin-left: 0; justify-content: center;">
                 <img src="Advancekids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
@@ -656,21 +659,5 @@
 
 </div>
 
-<!-- 📡 Aegis 100% 防攔截升級腳本：精準契合 GitHub 實體發布檔名 -->
-<script>
-function openDualLinks(event) {
-    if (event) event.preventDefault();
-    
-    // 🎯 精準對齊 GitHub Pages 實體線上報名表與契約書檔名
-    var formUrl = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Form-AdvanceA2.html";
-    var contractUrl = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceA2.html";
-    
-    // 1. 先開啟契約書分頁（直接響應使用者點擊，100% 規避 Safari 彈窗攔截）
-    var contractWindow = window.open(contractUrl, "_blank");
-    
-    // 2. 本頁順暢重定向至線上報名表
-    window.location.href = formUrl;
-}
-</script>
 </body>
 </html>
