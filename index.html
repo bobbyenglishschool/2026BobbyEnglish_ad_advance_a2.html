@@ -415,20 +415,64 @@
             table.ad-table, .info-card, .footer-image-box, .last-page-footer-box { page-break-inside: avoid; }
         }
 
+        /* 📱 手機響應式排版修正 (Flex Wrap & 寬度自適應防擠壓) */
         @media (max-width: 768px) {
             body { padding: 0; }
             .ad-container { border-radius: 0; box-shadow: none; }
-            .page { padding: 22px 18px 15px 18px; min-height: auto; }
-            .header-flex-box { padding: 16px 20px; flex-direction: column-reverse; text-align: center; }
+            .page { padding: 22px 14px 15px 14px; min-height: auto; }
+            
+            .header-flex-box { 
+                padding: 16px 14px; 
+                flex-direction: column-reverse; 
+                text-align: center;
+                min-height: auto;
+            }
             .title-group { text-align: center; width: 100%; }
-            .title-group h1 span.en-main-title { font-size: 18px; }
-            .title-group h1 span.zh-sub-title { font-size: 15px; }
-            .logo-img { max-width: 110px; margin-bottom: 8px; }
-            .description-scroll-box { max-height: 260px; }
-            table.ad-table { display: table; width: 100%; }
-            .footer-image-box { width: calc(100% + 36px); margin-left: -18px; }
+            .title-group h1 span.en-main-title { font-size: 17px; }
+            .title-group h1 span.zh-sub-title { font-size: 14.5px; }
+            .logo-img { max-width: 100px; margin-bottom: 8px; }
+            
+            .description-scroll-box { max-height: none; padding: 14px 16px; }
+            
+            .table-container { overflow-x: visible; }
+            table.ad-table { 
+                display: block; 
+                width: 100% !important; 
+                table-layout: auto;
+            }
+            table.ad-table thead { display: none; } /* 手機端隱藏傳統表頭 */
+            table.ad-table tbody { display: block; width: 100%; }
+            table.ad-table tr { 
+                display: flex; 
+                flex-direction: column; 
+                width: 100%; 
+                margin-bottom: 12px; 
+                border: 1.5px solid var(--uci-blue) !important; 
+                border-radius: 8px; 
+                overflow: hidden; 
+                background: #fff;
+            }
+            table.ad-table th, table.ad-table td { 
+                display: block !important; 
+                width: 100% !important; 
+                border: none !important; 
+                box-sizing: border-box; 
+                padding: 8px 12px;
+            }
+            table.ad-table td.center-text, table.ad-table td.col-chapter { 
+                background-color: #f0f4f8; 
+                border-bottom: 1px solid var(--uci-blue) !important; 
+                text-align: left !important;
+            }
+            table.ad-table td.left-align { border-bottom: 1px dashed #cbd5e1 !important; }
+            table.ad-table td:last-child { border-bottom: none !important; }
+
+            .info-card { padding: 12px 14px; }
+            ul.list-style { padding-left: 15px; }
+
+            .footer-image-box { width: calc(100% + 28px); margin-left: -14px; }
             .last-page-footer-box { width: 100%; margin: 0 auto; }
-            .page-footer-img { max-height: 120px; }
+            .page-footer-img { max-height: 110px; }
         }
     </style>
 </head>
@@ -580,11 +624,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="font-weight: 800;">📅 課程日期 | Course Dates</td>
+                            <td class="center-text" style="font-weight: 800;">📅 課程日期 | Course Dates</td>
                             <td class="left-align">2026年9月1日(二)正式開課 至 2027年1月7日(四)(每週二、四)<br><span class="note">Starts from September 1, 2026 to January 7, 2027 (Every Tue, Thu)</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 800;">⏰ 上課時間 | Class Time</td>
+                            <td class="center-text" style="font-weight: 800;">⏰ 上課時間 | Class Time</td>
                             <td style="text-align: center; vertical-align: middle;">
                                 <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 2px 0;">
                                     <div style="font-weight:800; color:var(--uci-blue); font-size:13.5px; line-height:1.2;">
@@ -597,22 +641,22 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 800;">🔢 總堂數 | Total Lessons</td>
+                            <td class="center-text" style="font-weight: 800;">🔢 總堂數 | Total Lessons</td>
                             <td class="left-align">全期共 38 堂進階實戰課<br><span class="note">38 lessons in total for the entire semester</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 800;">🎒 招生對象 | Target Students</td>
+                            <td class="center-text" style="font-weight: 800;">🎒 招生對象 | Target Students</td>
                             <td class="left-align">國小五至六年級（每週二、四固定上課，具備美語學習經驗 4 年以上者）<br><span class="note">Elementary School Grades 5-6 (Minimum 4 years of English learning experience)</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 800;">🛡️ 入學條件 | Admission Requirements</td>
+                            <td class="center-text" style="font-weight: 800;">🛡️ 入學條件 | Admission Requirements</td>
                             <td class="left-align" style="color: var(--text-main); font-size: 12.5px; line-height: 1.55; font-weight: 500;">
                                 1. 學員美語學習經驗需滿 4 年以上<br>
                                 2. 須通過補習班入學口試與筆試測驗
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 800;">💰 課程學費 | Tuition Fee</td>
+                            <td class="center-text" style="font-weight: 800;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
                                 <div style="font-size: 12.5px; color: var(--text-main); line-height: 1.6; font-weight: 500;">
                                     <div>• <strong>標準原價：</strong><strong style="color: var(--soft-red); font-size: 14px; font-family: 'Inter', sans-serif;">NT$35,060</strong></div>
